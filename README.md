@@ -62,6 +62,10 @@ dart run flutter_native_splash:create
 
 GitHub release sayfasinda kapak gorseli olarak `assets/cborn_release_banner.png` kullanabilirsin.
 
+## GitHub Onizleme
+
+![CBORN Stok Banner](assets/cborn_release_banner.png)
+
 ## Calistirma
 
 ```powershell
