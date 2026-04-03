@@ -15,7 +15,7 @@ Future<Database> openAppDatabase() async {
 
   return openDatabase(
     dbPath,
-    version: 5,
+    version: 6,
     onConfigure: (db) async {
       await db.execute('PRAGMA foreign_keys = ON');
     },
@@ -109,6 +109,11 @@ Future<Database> openAppDatabase() async {
           'ALTER TABLE purchase_orders ADD COLUMN discount_percent REAL NOT NULL DEFAULT 0',
         );
       }
+      if (oldVersion < 6) {
+        await db.execute(
+          "ALTER TABLE products ADD COLUMN image_path TEXT NOT NULL DEFAULT ''",
+        );
+      }
     },
     onCreate: (db, version) async {
       await db.execute('''
@@ -119,6 +124,7 @@ Future<Database> openAppDatabase() async {
           brand TEXT NOT NULL DEFAULT '',
           material_group TEXT NOT NULL DEFAULT '',
           shelf_location TEXT NOT NULL DEFAULT '',
+          image_path TEXT NOT NULL DEFAULT '',
           unit TEXT NOT NULL,
           sale_price REAL NOT NULL DEFAULT 0,
           stock_quantity REAL NOT NULL DEFAULT 0,

@@ -71,6 +71,7 @@ class Product {
     required this.brand,
     required this.materialGroup,
     required this.shelfLocation,
+    required this.imagePath,
     required this.unit,
     required this.salePrice,
     required this.stockQuantity,
@@ -86,6 +87,7 @@ class Product {
   final String brand;
   final String materialGroup;
   final String shelfLocation;
+  final String imagePath;
   final String unit;
   final double salePrice;
   final double stockQuantity;
@@ -107,6 +109,7 @@ class Product {
       brand: (map['brand'] as String?) ?? '',
       materialGroup: (map['material_group'] as String?) ?? '',
       shelfLocation: (map['shelf_location'] as String?) ?? '',
+      imagePath: (map['image_path'] as String?) ?? '',
       unit: map['unit'] as String,
       salePrice: (map['sale_price'] as num).toDouble(),
       stockQuantity: (map['stock_quantity'] as num).toDouble(),

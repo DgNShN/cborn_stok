@@ -13,6 +13,8 @@ Flutter ile gelistirilmis yerel veri tabanli stok, satis ve siparis takip uygula
 - Ayni malzeme grubunda akilli muadil urun onerileri
 - Dusuk stoktan siparis olusturma ve teslim alinca stoga isleme
 - Urun bazli coklu tedarikci, indirimli alis ve en karli tedarikci onerisi
+- Urun kartina fotograf ekleme ve saklama
+- Ozel uygulama ikonu, splash ekran ve release banner gorselleri
 
 ## Teknoloji
 
@@ -35,6 +37,30 @@ Not:
 
 - Android package id: `com.cborn.cborn_stok`
 - Mevcut release build debug signing ile uretiliyor. Play Store icin gercek keystore ile imzalanmasi gerekir.
+
+## Marka Gorselleri
+
+Projede hazir gorseller:
+
+- `assets/cborn_stok_logo.png`
+- `assets/cborn_stok_banner.png`
+- `assets/cborn_release_banner.png`
+
+Telefon ikonlarini yeniden uretmek icin:
+
+```powershell
+cd c:\AI_PROJECTS\cborn_stok
+dart run flutter_launcher_icons
+```
+
+Splash ekranini yeniden uretmek icin:
+
+```powershell
+cd c:\AI_PROJECTS\cborn_stok
+dart run flutter_native_splash:create
+```
+
+GitHub release sayfasinda kapak gorseli olarak `assets/cborn_release_banner.png` kullanabilirsin.
 
 ## Calistirma
 

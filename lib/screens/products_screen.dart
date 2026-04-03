@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
 import '../data/stock_repository.dart';
@@ -133,6 +136,9 @@ class _ProductsScreenState extends State<ProductsScreen> {
                               vertical: 6,
                             ),
                             child: ListTile(
+                              leading: _ProductImageThumb(
+                                imagePath: product.imagePath,
+                              ),
                               title: Text('${product.code} - ${product.name}'),
                               subtitle: Text(
                                 'Stok: ${formatNumber(product.stockQuantity)} ${product.unit}  •  '
@@ -192,6 +198,7 @@ class _ProductFormSheetState extends State<ProductFormSheet> {
   late final TextEditingController _unitController;
   late final TextEditingController _priceController;
   late final TextEditingController _minStockController;
+  String _imagePath = '';
   final List<_SupplierDraftController> _supplierDrafts = [];
   bool _saving = false;
   bool _loadingSuppliers = false;
@@ -216,6 +223,7 @@ class _ProductFormSheetState extends State<ProductFormSheet> {
     _minStockController = TextEditingController(
       text: product?.minStock.toStringAsFixed(2) ?? '0',
     );
+    _imagePath = product?.imagePath ?? '';
     if (product == null) {
       _addSupplierDraft();
     } else {
@@ -289,6 +297,7 @@ class _ProductFormSheetState extends State<ProductFormSheet> {
         brand: _brandController.text,
         materialGroup: _materialGroupController.text,
         shelfLocation: _shelfLocationController.text,
+        imagePath: _imagePath,
         unit: _unitController.text,
         salePrice: parseInputNumber(_priceController.text),
         minStock: parseInputNumber(_minStockController.text),
@@ -310,6 +319,29 @@ class _ProductFormSheetState extends State<ProductFormSheet> {
         SnackBar(content: Text('$error')),
       );
       setState(() => _saving = false);
+    }
+  }
+
+  Future<void> _pickImage() async {
+    final result = await FilePicker.platform.pickFiles(
+      type: FileType.image,
+      allowMultiple: false,
+    );
+    final sourcePath = result?.files.single.path;
+    if (sourcePath == null) return;
+
+    try {
+      final importedPath = await widget.repo.importProductImage(
+        sourcePath,
+        _codeController.text.trim().isEmpty ? _nameController.text : _codeController.text,
+      );
+      if (!mounted) return;
+      setState(() => _imagePath = importedPath);
+    } catch (error) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('$error')),
+      );
     }
   }
 
@@ -360,6 +392,34 @@ class _ProductFormSheetState extends State<ProductFormSheet> {
               TextFormField(
                 controller: _shelfLocationController,
                 decoration: const InputDecoration(labelText: 'Raf Yeri'),
+              ),
+              const SizedBox(height: 12),
+              Row(
+                children: [
+                  _ProductImageThumb(imagePath: _imagePath, size: 72),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        FilledButton.tonalIcon(
+                          onPressed: _saving ? null : _pickImage,
+                          icon: const Icon(Icons.image_outlined),
+                          label: Text(
+                            _imagePath.isEmpty ? 'Resim Sec' : 'Resmi Degistir',
+                          ),
+                        ),
+                        if (_imagePath.isNotEmpty)
+                          TextButton(
+                            onPressed: _saving
+                                ? null
+                                : () => setState(() => _imagePath = ''),
+                            child: const Text('Resmi Kaldir'),
+                          ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(height: 12),
               TextFormField(
@@ -425,6 +485,37 @@ class _ProductFormSheetState extends State<ProductFormSheet> {
     );
   }
 
+}
+
+class _ProductImageThumb extends StatelessWidget {
+  const _ProductImageThumb({
+    required this.imagePath,
+    this.size = 52,
+  });
+
+  final String imagePath;
+  final double size;
+
+  @override
+  Widget build(BuildContext context) {
+    final radius = BorderRadius.circular(16);
+    return ClipRRect(
+      borderRadius: radius,
+      child: Container(
+        width: size,
+        height: size,
+        color: const Color(0xFFE5E7EB),
+        child: imagePath.isEmpty
+            ? const Icon(Icons.inventory_2_outlined)
+            : Image.file(
+                File(imagePath),
+                fit: BoxFit.cover,
+                errorBuilder: (_, _, _) =>
+                    const Icon(Icons.broken_image_outlined),
+              ),
+      ),
+    );
+  }
 }
 
 class _SupplierDraftController {

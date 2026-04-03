@@ -1,3 +1,7 @@
+import 'dart:io';
+
+import 'package:path/path.dart' as p;
+import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 
 import '../db/db.dart';
@@ -77,6 +81,7 @@ class StockRepository {
     required String brand,
     required String materialGroup,
     required String shelfLocation,
+    required String imagePath,
     required String unit,
     required double salePrice,
     required double minStock,
@@ -86,6 +91,7 @@ class StockRepository {
     final cleanedBrand = brand.trim();
     final cleanedMaterialGroup = materialGroup.trim();
     final cleanedShelfLocation = shelfLocation.trim();
+    final cleanedImagePath = imagePath.trim();
     if (salePrice < 0 || salePrice > maxPriceValue) {
       throw StateError('Satis fiyati cok buyuk veya gecersiz.');
     }
@@ -104,6 +110,7 @@ class StockRepository {
       'brand': cleanedBrand,
       'material_group': cleanedMaterialGroup,
       'shelf_location': cleanedShelfLocation,
+      'image_path': cleanedImagePath,
       'unit': unit.trim().isEmpty ? 'Adet' : unit.trim(),
       'sale_price': salePrice,
       'min_stock': minStock,
@@ -123,6 +130,30 @@ class StockRepository {
       whereArgs: [id],
     );
     return id;
+  }
+
+  Future<String> importProductImage(String sourcePath, String productCode) async {
+    final file = File(sourcePath);
+    if (!await file.exists()) {
+      throw StateError('Secilen resim dosyasi bulunamadi.');
+    }
+
+    final docsDir = await getApplicationDocumentsDirectory();
+    final imageDir = Directory(p.join(docsDir.path, 'product_images'));
+    if (!await imageDir.exists()) {
+      await imageDir.create(recursive: true);
+    }
+
+    final extension = p.extension(sourcePath);
+    final sanitizedCode = productCode.trim().isEmpty
+        ? 'urun'
+        : productCode.trim().replaceAll(RegExp(r'[^a-zA-Z0-9_-]'), '_');
+    final targetPath = p.join(
+      imageDir.path,
+      '${sanitizedCode}_${DateTime.now().millisecondsSinceEpoch}$extension',
+    );
+    await file.copy(targetPath);
+    return targetPath;
   }
 
   Future<void> _ensureUniqueProduct({
@@ -792,6 +823,7 @@ class StockRepository {
           brand: (row['brand'] ?? '').trim(),
           materialGroup: (row['material_group'] ?? '').trim(),
           shelfLocation: (row['shelf_location'] ?? '').trim(),
+          imagePath: '',
           unit: (row['unit'] ?? 'Adet').trim(),
           salePrice: _parseOptionalNumber(row['sale_price']),
           minStock: _parseOptionalNumber(row['min_stock']),
