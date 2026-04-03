@@ -66,6 +66,16 @@ You can use `assets/cborn_release_banner.png` as the cover image on the GitHub r
 
 ![CBORN Stok Banner](assets/cborn_release_banner.png)
 
+## App Screenshots
+
+Main dashboard preview:
+
+![CBORN Stok Dashboard 1](assets/github_dashboard_1.png)
+
+Alternative dashboard view:
+
+![CBORN Stok Dashboard 2](assets/github_dashboard_2.png)
+
 ## Run
 
 ```powershell
