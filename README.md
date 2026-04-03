@@ -1,72 +1,72 @@
 # CBORN Stok
 
-Flutter ile gelistirilmis yerel veri tabanli stok, satis ve siparis takip uygulamasi.
+A Flutter-based local inventory, sales, and purchase tracking application.
 
-## Ozellikler
+## Features
 
-- Urun ekleme, duzenleme ve silme
-- Stok girisi ve stok cikisi
-- Satis kaydi ve PDF irsaliye olusturma
-- Stok sorgulama, hareket gecmisi ve dusuk stok takibi
-- CSV/TXT ile toplu urun ice aktarma
-- Ortalama maliyet, son maliyet, raf yeri ve kar yuzdesi takibi
-- Ayni malzeme grubunda akilli muadil urun onerileri
-- Dusuk stoktan siparis olusturma ve teslim alinca stoga isleme
-- Urun bazli coklu tedarikci, indirimli alis ve en karli tedarikci onerisi
-- Urun kartina fotograf ekleme ve saklama
-- Ozel uygulama ikonu, splash ekran ve release banner gorselleri
+- Add, edit, and delete products
+- Record stock-in and stock-out operations
+- Create sales records and generate PDF delivery notes
+- Query stock, review movement history, and monitor low-stock items
+- Bulk import products from CSV/TXT files
+- Track average cost, last cost, shelf location, and profit margin
+- Get smart substitute suggestions within the same material group
+- Create purchase orders from low-stock items and receive them into stock later
+- Manage multiple suppliers per product with discounts and best-profit suggestions
+- Attach and store product photos
+- Use custom app icon, splash screen, and release banner visuals
 
-## Teknoloji
+## Tech Stack
 
 - Flutter
 - SQLite (`sqflite`)
-- PDF olusturma (`pdf`)
-- Dosya secme (`file_picker`)
+- PDF generation (`pdf`)
+- File picking (`file_picker`)
 
-## Proje Konumu
+## Project Location
 
 `c:\AI_PROJECTS\cborn_stok`
 
 ## APK
 
-Son olusturulan release APK:
+Latest release APK:
 
 `build\app\outputs\flutter-apk\app-release.apk`
 
-Not:
+Notes:
 
 - Android package id: `com.cborn.cborn_stok`
-- Mevcut release build debug signing ile uretiliyor. Play Store icin gercek keystore ile imzalanmasi gerekir.
+- The current release build is generated with debug signing. A production keystore is required for Play Store publishing.
 
-## Marka Gorselleri
+## Branding Assets
 
-Projede hazir gorseller:
+Available project visuals:
 
 - `assets/cborn_stok_logo.png`
 - `assets/cborn_stok_banner.png`
 - `assets/cborn_release_banner.png`
 
-Telefon ikonlarini yeniden uretmek icin:
+To regenerate the mobile app icons:
 
 ```powershell
 cd c:\AI_PROJECTS\cborn_stok
 dart run flutter_launcher_icons
 ```
 
-Splash ekranini yeniden uretmek icin:
+To regenerate the splash screen:
 
 ```powershell
 cd c:\AI_PROJECTS\cborn_stok
 dart run flutter_native_splash:create
 ```
 
-GitHub release sayfasinda kapak gorseli olarak `assets/cborn_release_banner.png` kullanabilirsin.
+You can use `assets/cborn_release_banner.png` as the cover image on the GitHub release page.
 
-## GitHub Onizleme
+## GitHub Preview
 
 ![CBORN Stok Banner](assets/cborn_release_banner.png)
 
-## Calistirma
+## Run
 
 ```powershell
 cd c:\AI_PROJECTS\cborn_stok
@@ -74,7 +74,7 @@ flutter pub get
 flutter run -d windows
 ```
 
-Android icin:
+For Android:
 
 ```powershell
 cd c:\AI_PROJECTS\cborn_stok
@@ -88,16 +88,16 @@ cd c:\AI_PROJECTS\cborn_stok
 flutter build apk --release
 ```
 
-## Ornek Veri
+## Sample Data
 
-Hazir import dosyalari:
+Included import files:
 
 - `ornek_urun_import.csv`
 - `ornek_urun_import_uzun.csv`
 
-## GitHub Notu
+## GitHub Note
 
-Bu klasor su an otomatik olarak bir `git` reposu degil. GitHub'a yuklemek icin:
+If you want to upload this folder to GitHub from scratch:
 
 ```powershell
 cd c:\AI_PROJECTS\cborn_stok
