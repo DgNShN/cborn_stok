@@ -1,0 +1,13 @@
+code,name,brand,material_group,shelf_location,unit,sale_price,min_stock,initial_stock,last_cost
+3001,Yag Filtresi,Bosch,Yag Filtresi,A-01,Adet,350,5,2,210
+3002,Yag Filtresi Valeo,Valeo,Yag Filtresi,A-02,Adet,330,5,18,190
+3003,Yag Filtresi Mando,Mando,Yag Filtresi,A-03,Adet,345,5,9,205
+3004,Hava Filtresi,Mahle,Hava Filtresi,B-01,Adet,420,4,1,260
+3005,Hava Filtresi Mando,Mando,Hava Filtresi,B-02,Adet,410,4,12,250
+3006,Hava Filtresi Bosch,Bosch,Hava Filtresi,B-03,Adet,435,4,7,275
+3007,Fren Balatasi,TRW,Fren Balatasi,C-01,Set,890,3,2,620
+3008,Fren Balatasi Bosch,Bosch,Fren Balatasi,C-02,Set,910,3,11,640
+3009,Fren Balatasi Valeo,Valeo,Fren Balatasi,C-03,Set,870,3,6,600
+3010,Polen Filtresi,Mann,Polen Filtresi,D-01,Adet,280,6,3,150
+3011,Polen Filtresi BluePrint,BluePrint,Polen Filtresi,D-02,Adet,265,6,14,145
+3012,Polen Filtresi Bosch,Bosch,Polen Filtresi,D-03,Adet,295,6,8,170

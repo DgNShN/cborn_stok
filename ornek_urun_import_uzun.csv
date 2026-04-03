@@ -1,0 +1,73 @@
+code,name,brand,material_group,shelf_location,unit,sale_price,min_stock,initial_stock,last_cost
+4001,Yag Filtresi Bosch 1,Bosch,Yag Filtresi,A-01,Adet,350,5,18,210
+4002,Yag Filtresi Mann 1,Mann,Yag Filtresi,A-02,Adet,340,5,14,205
+4003,Yag Filtresi Valeo 1,Valeo,Yag Filtresi,A-03,Adet,335,5,9,198
+4004,Yag Filtresi Mahle 1,Mahle,Yag Filtresi,A-04,Adet,345,5,7,202
+4005,Yag Filtresi Mando 1,Mando,Yag Filtresi,A-05,Adet,338,5,5,196
+4006,Yag Filtresi BluePrint 1,BluePrint,Yag Filtresi,A-06,Adet,332,5,11,192
+4007,Hava Filtresi Bosch 1,Bosch,Hava Filtresi,B-01,Adet,420,4,13,265
+4008,Hava Filtresi Mann 1,Mann,Hava Filtresi,B-02,Adet,415,4,8,258
+4009,Hava Filtresi Valeo 1,Valeo,Hava Filtresi,B-03,Adet,410,4,10,252
+4010,Hava Filtresi Mahle 1,Mahle,Hava Filtresi,B-04,Adet,430,4,6,272
+4011,Hava Filtresi Mando 1,Mando,Hava Filtresi,B-05,Adet,405,4,15,248
+4012,Hava Filtresi BluePrint 1,BluePrint,Hava Filtresi,B-06,Adet,398,4,4,242
+4013,Polen Filtresi Bosch 1,Bosch,Polen Filtresi,C-01,Adet,290,6,17,170
+4014,Polen Filtresi Mann 1,Mann,Polen Filtresi,C-02,Adet,285,6,12,165
+4015,Polen Filtresi Valeo 1,Valeo,Polen Filtresi,C-03,Adet,278,6,7,160
+4016,Polen Filtresi Mahle 1,Mahle,Polen Filtresi,C-04,Adet,295,6,5,176
+4017,Polen Filtresi Mando 1,Mando,Polen Filtresi,C-05,Adet,272,6,9,155
+4018,Polen Filtresi BluePrint 1,BluePrint,Polen Filtresi,C-06,Adet,268,6,14,150
+4019,Fren Balatasi Bosch 1,Bosch,Fren Balatasi,D-01,Set,920,3,8,650
+4020,Fren Balatasi TRW 1,TRW,Fren Balatasi,D-02,Set,890,3,11,620
+4021,Fren Balatasi Valeo 1,Valeo,Fren Balatasi,D-03,Set,875,3,6,605
+4022,Fren Balatasi Brembo 1,Brembo,Fren Balatasi,D-04,Set,960,3,10,690
+4023,Fren Balatasi Mando 1,Mando,Fren Balatasi,D-05,Set,860,3,4,590
+4024,Fren Balatasi BluePrint 1,BluePrint,Fren Balatasi,D-06,Set,845,3,12,580
+4025,Triger Seti Bosch 1,Bosch,Triger Seti,E-01,Set,1850,2,5,1380
+4026,Triger Seti Gates 1,Gates,Triger Seti,E-02,Set,1920,2,7,1450
+4027,Triger Seti Dayco 1,Dayco,Triger Seti,E-03,Set,1885,2,6,1410
+4028,Triger Seti Valeo 1,Valeo,Triger Seti,E-04,Set,1810,2,3,1350
+4029,Triger Seti SKF 1,SKF,Triger Seti,E-05,Set,1960,2,9,1490
+4030,Triger Seti BluePrint 1,BluePrint,Triger Seti,E-06,Set,1795,2,4,1325
+4031,V Kayisi Bosch 1,Bosch,V Kayisi,F-01,Adet,480,4,15,300
+4032,V Kayisi Gates 1,Gates,V Kayisi,F-02,Adet,510,4,11,325
+4033,V Kayisi Dayco 1,Dayco,V Kayisi,F-03,Adet,495,4,9,318
+4034,V Kayisi Continental 1,Continental,V Kayisi,F-04,Adet,525,4,8,340
+4035,V Kayisi Valeo 1,Valeo,V Kayisi,F-05,Adet,470,4,6,295
+4036,V Kayisi BluePrint 1,BluePrint,V Kayisi,F-06,Adet,455,4,13,286
+4037,Amortisor On Bosch 1,Bosch,Amortisor On,G-01,Adet,2150,2,4,1650
+4038,Amortisor On Monroe 1,Monroe,Amortisor On,G-02,Adet,2280,2,7,1760
+4039,Amortisor On Sachs 1,Sachs,Amortisor On,G-03,Adet,2340,2,5,1810
+4040,Amortisor On Mando 1,Mando,Amortisor On,G-04,Adet,2090,2,6,1605
+4041,Amortisor On KYB 1,KYB,Amortisor On,G-05,Adet,2390,2,8,1855
+4042,Amortisor On BluePrint 1,BluePrint,Amortisor On,G-06,Adet,2050,2,3,1575
+4043,Amortisor Arka Bosch 1,Bosch,Amortisor Arka,H-01,Adet,1980,2,6,1490
+4044,Amortisor Arka Monroe 1,Monroe,Amortisor Arka,H-02,Adet,2100,2,5,1580
+4045,Amortisor Arka Sachs 1,Sachs,Amortisor Arka,H-03,Adet,2145,2,7,1625
+4046,Amortisor Arka Mando 1,Mando,Amortisor Arka,H-04,Adet,1930,2,4,1455
+4047,Amortisor Arka KYB 1,KYB,Amortisor Arka,H-05,Adet,2190,2,9,1670
+4048,Amortisor Arka BluePrint 1,BluePrint,Amortisor Arka,H-06,Adet,1895,2,3,1425
+4049,Buji Bosch 1,Bosch,Buji,I-01,Adet,220,10,30,115
+4050,Buji NGK 1,NGK,Buji,I-02,Adet,235,10,26,122
+4051,Buji Denso 1,Denso,Buji,I-03,Adet,240,10,18,128
+4052,Buji Valeo 1,Valeo,Buji,I-04,Adet,215,10,16,112
+4053,Buji Champion 1,Champion,Buji,I-05,Adet,225,10,22,118
+4054,Buji BluePrint 1,BluePrint,Buji,I-06,Adet,208,10,14,108
+4055,Debriyaj Seti Bosch 1,Bosch,Debriyaj Seti,J-01,Set,3250,2,4,2520
+4056,Debriyaj Seti Valeo 1,Valeo,Debriyaj Seti,J-02,Set,3390,2,6,2650
+4057,Debriyaj Seti Sachs 1,Sachs,Debriyaj Seti,J-03,Set,3480,2,5,2725
+4058,Debriyaj Seti Luk 1,Luk,Debriyaj Seti,J-04,Set,3520,2,7,2760
+4059,Debriyaj Seti Mando 1,Mando,Debriyaj Seti,J-05,Set,3180,2,3,2475
+4060,Debriyaj Seti BluePrint 1,BluePrint,Debriyaj Seti,J-06,Set,3090,2,2,2410
+4061,Devirdaim Pompa Bosch 1,Bosch,Devirdaim Pompa,K-01,Adet,1180,3,7,760
+4062,Devirdaim Pompa Valeo 1,Valeo,Devirdaim Pompa,K-02,Adet,1145,3,5,735
+4063,Devirdaim Pompa SKF 1,SKF,Devirdaim Pompa,K-03,Adet,1230,3,9,790
+4064,Devirdaim Pompa Gates 1,Gates,Devirdaim Pompa,K-04,Adet,1215,3,6,782
+4065,Devirdaim Pompa Mando 1,Mando,Devirdaim Pompa,K-05,Adet,1090,3,4,705
+4066,Devirdaim Pompa BluePrint 1,BluePrint,Devirdaim Pompa,K-06,Adet,1050,3,8,690
+4067,Radyator Bosch 1,Bosch,Radyator,L-01,Adet,2750,2,3,2150
+4068,Radyator Valeo 1,Valeo,Radyator,L-02,Adet,2690,2,5,2095
+4069,Radyator Nissens 1,Nissens,Radyator,L-03,Adet,2840,2,6,2220
+4070,Radyator Mahle 1,Mahle,Radyator,L-04,Adet,2795,2,4,2180
+4071,Radyator Mando 1,Mando,Radyator,L-05,Adet,2625,2,2,2040
+4072,Radyator BluePrint 1,BluePrint,Radyator,L-06,Adet,2580,2,7,1995
